@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Login</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+		
+		.login {
+			display: flex;
+			height: 90vh;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.body-login {
+			width:100%;
+			background-color: black;
+			color: white
+		}
+		
+		.erro {
+			color: red; font-size: 13px;
+		}
+		
+		.botao {
+			padding: 10px;
+			border-radius: 8px;
+			background-color: #2662A0;
+			font-weight: 500;
+			color: white;
+			cursor: pointer;
+		}
+		
+		.input {
+			padding: 12px 8px;
+			outline: none;
+			font-size: 15px;
+			border-radius: 8px;
+			border: none;
+		}
+		
+	</style>
+</h:head>
+<h:body styleClass="body-login">
+	<h:form id="formLogin">
+		<h:panelGrid class="login">
+			<f:facet name="header">
+				<h:graphicImage library="img" name="nft-logo.png"/>
+			</f:facet>
+			<br/>
+			
+			<h:outputLabel value="Login" for="login"/>
+			<h:panelGroup>
+				<h:inputText styleClass="input" id="login" value="#{pessoaBean.pessoa.login}"  pt:placeholder="Informe um login válido"/>
+				<br/>
+				<h:message for="login" styleClass="erro"/>
+			</h:panelGroup>
+			<br/>
+			
+			<h:outputLabel value="Senha" for="senha"/>
+			<h:panelGroup>
+				<h:inputSecret styleClass="input" id="senha" value="#{pessoaBean.pessoa.senha}"  pt:placeholder="Informe uma senha válida"/>
+				<br/>
+				<h:message for="senha" styleClass="erro"/>
+			</h:panelGroup>
+			<h:outputLabel/>
+			<h:commandButton action="#{pessoaBean.logar}" value="Acessar" styleClass="botao"/>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

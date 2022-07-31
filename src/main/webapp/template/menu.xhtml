@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+		
+		.formMenu {
+			background-color: black;
+		}
+	
+		.menu {
+			max-width: 950px;
+			width: 100%;
+			margin: 0 auto;
+			padding: 5px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+		.nav-menu {
+			display: flex;
+			gap: 15px;
+		}
+		
+		.nav-menu a {		
+			text-decoration: none;
+			color: white;
+		}
+		
+		.nav-menu a:hover {
+			color: blue;
+		}
+</style>
+</h:head>
+
+<h:body>
+
+	<h:form styleClass="formMenu">
+		<h:panelGroup layout="block" styleClass="menu">
+			<h:graphicImage value="#{pessoaBean.usuario.fotoIcon}" width="70"/>
+			<h:panelGroup layout="block" styleClass="nav-menu">
+				<h:commandLink value="Administração" action="paginaum?faces-redirect=true" />
+				<h:commandLink value="Lançamentos" action="lancamentos?faces-redirect=true" />
+				<h:commandLink value="Sair" action="#{pessoaBean.deslogar}" />
+			</h:panelGroup>
+		</h:panelGroup>
+	</h:form>
+	
+</h:body>
+</html>
